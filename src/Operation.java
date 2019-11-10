@@ -10,30 +10,17 @@ public abstract class Operation implements Expression  {
 
 
     public abstract double calcule();
+    public abstract String otoString();
 
+
+   @Override
+    public String toString () {
+       return this.otoString();
+   }
 
     @Override
-    public double evalue(double... v)  {
-        double resultat = 0.0 ;
-            switch (this.op1) {
-                case '+' :
-                     resultat = op1.evalue() + op2.evalue();
-                     break;
-                    case '-' :
-                     resultat =  op1.evalue() - op2.evalue();
-                     break;
-                 case '*' :
-                     resultat =  op1.evalue() * op2.evalue();
-                     break;
-                 case '/' :
-                     resultat =  op1.evalue() / op2.evalue();
-                     break;
-                 case 'v' :
-                     resultat = 0;
-                     }
-             return resultat;
-
+    public double evalue (double... v){
+        return this.calcule();
     }
-
 
 }

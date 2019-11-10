@@ -13,4 +13,9 @@ public class Variable implements Expression{
     public double evalue(double... variables) {
         return this.id+this.v;
     }
+
+    @Override
+    public String toString(){
+        return String.format("%c%d",this.v,this.id);
+    }
 }
