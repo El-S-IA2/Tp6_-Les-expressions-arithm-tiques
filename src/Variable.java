@@ -1,21 +1,22 @@
 public class Variable implements Expression{
-    int id;
-    char v='x';
+    private final int id;
     public Variable(int id){
-        this.id=id;
-        this.v='x';
         if (id <0) {
             throw new IllegalArgumentException("id negatf !");
-        }
+           }
+        this.id=id;
     }
 
     @Override
     public double evalue(double... variables) {
-        return this.id+this.v;
+    	if (id>=variables.length) {
+    		throw new VariableNonDefinieException(this);
+    	}
+        return variables[id];
     }
 
     @Override
     public String toString(){
-        return String.format("%c%d",this.v,this.id);
+    	return String.format("%c%d",'x',this.id);
     }
 }

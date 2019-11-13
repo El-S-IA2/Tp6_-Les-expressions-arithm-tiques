@@ -4,8 +4,8 @@ public class Soustraction extends Operation {
         super(op1,op2);
     }
 
-    public double calcule() {
-        return op1.evalue()-op2.evalue();
+    public double calcule(double v1,double v2) {
+        return v1-v2;
     }
 
     public  String otoString(){

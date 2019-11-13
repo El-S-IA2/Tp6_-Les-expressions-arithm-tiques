@@ -4,8 +4,9 @@ public class Division extends Operation  {
         super(op1, op2);
     }
 
-    public double calcule() {
-        return op1.evalue() / op2.evalue();
+    public double calcule(double v1,double v2) {
+    	if(v2==0) {throw new DivisionParZeroException(this);}
+        return v1/v2;
     }
 
     public  String otoString(){

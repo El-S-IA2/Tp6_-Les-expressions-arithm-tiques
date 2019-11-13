@@ -1,8 +1,8 @@
 public class Constante implements Expression {
 
-    float valeur;
+    double valeur;
 
-    public Constante(float v) {
+    public Constante(double v) {
         this.valeur = v;
     }
 

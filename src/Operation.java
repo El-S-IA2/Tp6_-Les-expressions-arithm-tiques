@@ -9,7 +9,7 @@ public abstract class Operation implements Expression  {
     }
 
 
-    public abstract double calcule();
+    public abstract double calcule(double v1,double v2);
     public abstract String otoString();
 
 
@@ -19,8 +19,10 @@ public abstract class Operation implements Expression  {
    }
 
     @Override
-    public double evalue (double... v){
-        return this.calcule();
+    public double evalue (double... variables){
+        double vop1=op1.evalue(variables);
+        double vop2=op2.evalue(variables);
+        return calcule(vop1,vop2);
     }
 
 }
