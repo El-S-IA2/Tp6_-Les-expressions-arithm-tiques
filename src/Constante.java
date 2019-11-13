@@ -1,13 +1,19 @@
-public class Constante implements Expression{
+public class Constante implements Expression {
 
-    final double constantee;
+    double valeur;
 
-    Constante(double constante){
-        this.constantee = constante;
+    public Constante(float v) {
+        this.valeur = v;
     }
 
     @Override
     public double evalue(double... variables) {
-        return 0;
+        return this.valeur;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%.2g",this.valeur);
     }
 }
+

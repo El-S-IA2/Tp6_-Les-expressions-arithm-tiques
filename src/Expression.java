@@ -1,4 +1,4 @@
 public interface Expression {
-
-    double evalue(double... variables);
+    public double evalue (double... variables) ;
+    public String toString();
 }
